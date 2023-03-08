@@ -4,7 +4,7 @@ import LadderGame.domain.Line;
 
 import java.util.ArrayList;
 
-public class Print {
+public class Output {
     // 이름 출력
     public void namePrint(ArrayList<String> names) {
         for (String name : names) {

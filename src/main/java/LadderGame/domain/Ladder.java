@@ -1,6 +1,6 @@
 package LadderGame.domain;
 
-import LadderGame.view.Print;
+import LadderGame.view.Output;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,9 +35,9 @@ public class Ladder {
 
     // 출력 호출
     public void callPrint() {
-        Print print = new Print();
+        Output output = new Output();
 
-        print.namePrint(names);
-        print.setPrint(ladder_set);
+        output.namePrint(names);
+        output.setPrint(ladder_set);
     }
 }
