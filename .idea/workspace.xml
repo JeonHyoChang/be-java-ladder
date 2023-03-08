@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="37600dd4-43dd-4b2d-a62d-19fc13fe37ec" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LadderGame/Ladder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LadderGame/Ladder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LadderGame/Ladder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LadderGame/domain/Ladder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LadderGame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LadderGame/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +48,10 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="test01" />
+                    <option name="lastUsedInstant" value="1678251542" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="step03" />
                     <option name="lastUsedInstant" value="1678239427" />
                   </RecentBranch>
@@ -82,7 +86,7 @@
       <module name="java-lotto.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LadderGame.*" />
+          <option name="PATTERN" value="LadderGame.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
