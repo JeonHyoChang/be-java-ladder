@@ -28,40 +28,17 @@ public class Ladder {
     }
 
     // 사다리 설정
-    public void setLadder(int line) {
+    public void setLadder() {
         for (int i = 0; i < ladder_height; i++) {
             ladder_set.add(new Line(names.size()));
         }
     }
 
-    // 이름 출력
-    public void namePrint() {
-        for (String temp : names) {
-            System.out.print(temp);
-            spacePrint(temp.length());
-        }
-        System.out.println();
+    public ArrayList<String> getNames() {
+        return this.names;
     }
 
-    // 빈 공간 출력
-    public void spacePrint(int length) {
-        for (int i = 6 - length; i > 0; i--) {
-            System.out.print(" ");
-        }
-    }
-
-    public String boolToString(boolean point){
-        if(point) return "-----";
-        return "     ";
-    }
-
-    // 사다리 출력
-    public void setPrint() {
-        namePrint();
-
-        for (Line line : ladder_set) {
-            line.getPoints().forEach(point-> System.out.print("|"+boolToString(point)));
-            System.out.println("|");
-        }
+    public ArrayList<Line> getLadder_set() {
+        return this.ladder_set;
     }
 }

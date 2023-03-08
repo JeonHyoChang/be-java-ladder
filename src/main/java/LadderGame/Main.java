@@ -1,20 +1,19 @@
 package LadderGame;
 
 import LadderGame.domain.Ladder;
+import LadderGame.view.Print;
 
 public class Main {
     public static void main(String[] args) {
-        // 재귀 함수 시작 변수
-        int recursion_num = 0;
-
         // 사다리 값 입력
         Ladder ladder = new Ladder();
 
         // 사다리 설정
-        ladder.setLadder(recursion_num);
+        ladder.setLadder();
 
         // 사다리 출력
+        Print print = new Print();
         System.out.println();
-        ladder.setPrint(); // 리스트로 변경하면서 재귀방식X
+        print.setPrint(ladder);
     }
 }
