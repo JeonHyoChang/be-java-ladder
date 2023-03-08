@@ -1,6 +1,5 @@
 package LadderGame.domain;
 
-import LadderGame.view.Input;
 import LadderGame.view.Print;
 
 import java.util.ArrayList;
@@ -13,14 +12,13 @@ public class Ladder {
     private final ArrayList<String> names;
 
     // 초기값 세팅
-    public Ladder() {
-        Input input = new Input();
-        this.names = parsingName(input.getNames());
-        this.ladder_height = input.getLadder_height();
+    public Ladder(int ladder_height, String names) {
+        this.ladder_height = ladder_height;
+        this.names = parsingName(names);
         ladder_set = new ArrayList<>();
     }
 
-    // 이름 분리
+    // 이름 분리(5글자 초과는 5자로 컷)
     public ArrayList<String> parsingName(String str) {
         // map을 통하여 5글자 제한 기능 구현
         return (ArrayList<String>) Arrays.stream(str.split(","))
