@@ -26,6 +26,7 @@ public class Line {
         return false;
     }
 
+    // 라인값 호출
     public ArrayList<Boolean> getPoints() {
         return this.points;
     }

@@ -1,15 +1,16 @@
 package LadderGame.domain;
 
 import LadderGame.view.Input;
+import LadderGame.view.Print;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class Ladder {
-    private int ladder_height;
-    private ArrayList<Line> ladder_set;
-    private ArrayList<String> names;
+    private final int ladder_height;
+    private final ArrayList<Line> ladder_set;
+    private final ArrayList<String> names;
 
     // 초기값 세팅
     public Ladder() {
@@ -34,11 +35,11 @@ public class Ladder {
         }
     }
 
-    public ArrayList<String> getNames() {
-        return this.names;
-    }
+    // 출력 호출
+    public void callPrint() {
+        Print print = new Print();
 
-    public ArrayList<Line> getLadder_set() {
-        return this.ladder_set;
+        print.namePrint(names);
+        print.setPrint(ladder_set);
     }
 }
