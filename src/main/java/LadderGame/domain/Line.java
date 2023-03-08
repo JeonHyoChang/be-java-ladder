@@ -25,4 +25,8 @@ public class Line {
         }
         return false;
     }
+
+    public ArrayList<Boolean> getPoints() {
+        return points;
+    }
 }

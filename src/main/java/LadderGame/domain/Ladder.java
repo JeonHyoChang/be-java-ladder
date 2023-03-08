@@ -2,14 +2,13 @@ package LadderGame.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Ladder {
     private int ladder_height;
-    private List<List<String>> ladder_set;
-    private List<String> names;
+    private ArrayList<Line> ladder_set;
+    private ArrayList<String> names;
 
     // 초기값 세팅
     public Ladder() {
@@ -29,25 +28,17 @@ public class Ladder {
     }
 
     // 이름 분리
-    public List<String> parsingName(String str) {
+    public ArrayList<String> parsingName(String str) {
         // map을 통하여 5글자 제한 기능 구현
-        return Arrays.stream(str.split(","))
+        return (ArrayList<String>) Arrays.stream(str.split(","))
                 .map(s -> s.length() > 5 ? s.substring(0, 5) : s)
                 .collect(Collectors.toList());
     }
 
     // 사다리 설정
     public void setLadder(int line) {
-        List<String> temp_List = new ArrayList<>();
-
-        for (int j = 0; j < names.size() * 2 - 1; j++) {
-            String before_line = j < 2 ? "     " : temp_List.get(j - 2);
-            temp_List.add(lineCheck(j, before_line));
-        }
-        ladder_set.add(temp_List);
-
-        if (line + 1 < ladder_height) {
-            setLadder(line + 1);
+        for (int i = 0; i < ladder_height; i++) {
+            ladder_set.add(new Line(names.size()));
         }
     }
 
@@ -67,14 +58,8 @@ public class Ladder {
         }
     }
 
-    // 사다리 내부 값
-    public String lineCheck(int check, String before_line) {
-        if (check % 2 == 0) {
-            return "|";
-        }
-        if ((int) (Math.random() * 2) == 1 && before_line.equals("     ")) {
-            return "-----";
-        }
+    public String boolToString(boolean point){
+        if(point) return "-----";
         return "     ";
     }
 
@@ -82,9 +67,9 @@ public class Ladder {
     public void setPrint() {
         namePrint();
 
-        for (List<String> temp_List : ladder_set) {
-            temp_List.forEach(System.out::print);
-            System.out.println();
+        for (Line line : ladder_set) {
+            line.getPoints().forEach(point-> System.out.print("|"+boolToString(point)));
+            System.out.println("|");
         }
     }
 }
