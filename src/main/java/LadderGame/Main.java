@@ -1,11 +1,13 @@
 package LadderGame;
 
 import LadderGame.domain.Ladder;
+import LadderGame.view.Input;
 
 public class Main {
     public static void main(String[] args) {
         // 사다리 값 입력
-        Ladder ladder = new Ladder();
+        Input input = new Input();
+        Ladder ladder = new Ladder(input.inputHeight(), input.inputNames());
 
         // 사다리 설정
         ladder.setLadder();
