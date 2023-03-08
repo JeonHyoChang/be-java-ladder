@@ -1,6 +1,5 @@
 package LadderGame.view;
 
-import LadderGame.domain.Ladder;
 import LadderGame.domain.Line;
 
 import java.util.ArrayList;
@@ -8,9 +7,9 @@ import java.util.ArrayList;
 public class Print {
     // 이름 출력
     public void namePrint(ArrayList<String> names) {
-        for (String temp : names) {
-            System.out.print(temp);
-            spacePrint(temp.length());
+        for (String name : names) {
+            System.out.print(name);
+            spacePrint(name.length());
         }
         System.out.println();
     }
@@ -29,10 +28,8 @@ public class Print {
     }
 
     // 사다리 출력
-    public void setPrint(Ladder ladder) {
-        namePrint(ladder.getNames());
-
-        for (Line line : ladder.getLadder_set()) {
+    public void setPrint(ArrayList<Line> lines) {
+        for (Line line : lines) {
             line.getPoints().forEach(point -> System.out.print("|" + boolToString(point)));
             System.out.println("|");
         }
