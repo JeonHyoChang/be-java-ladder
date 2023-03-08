@@ -10,7 +10,7 @@ public class Main {
         // 사다리 설정
         ladder.setLadder();
 
-        // 사다리 출력출
+        // 사다리 출력
         System.out.println();
         ladder.callPrint();
     }
